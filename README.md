@@ -9,6 +9,6 @@ Handlebars
 MySQL
 NodeJS
 
-Deployed on: Heroku
+Deployed on: Heroku ........soon
 
 After installation, open Terminal and run 'node server.js', open the localHost, and proceed with the application.
