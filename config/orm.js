@@ -2,28 +2,46 @@ var connection = require("../config/connection");
 
 
 var orm = {
-    selectAll: function(tableInput, callback) {
+    selectAll: function(tableInput, cb) {
         const queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, [tableInput], function(err,result){
+        connection.query(queryString, function(err,result){
             if(err) throw err;
-            callback(result);
+            cb(result);
         });
     },
-    insertOne: function(tableInput, column, value, callback) {
-        const query = `INSERT INTO ?? (??) VALUES (?)`;
-        connection.query(query, [tableInput, column, value] , function(err, result) {
-            if(err) throw err
-            callback(result)
+    insertOne: function (table, columns, values, cb) {
+        var queryString = "INSERT INTO " + table;
+        queryString += " (";
+        queryString += columns.toString();
+        queryString += ") ";
+        queryString += "VALUES (";
+        queryString += printQuestionMarks(values.length);
+        queryString += ") ";
+  
+        connection.query(queryString, values, function (err, result) {
+           if (err) {
+              throw err;
+           }
+           console.log("ormRes " + result);
+           cb(result);
         });
     },
-    updateOne: function(tableInput, col1,val1, col2, val2, callback) {
-        const query = `UPDATE ?? SET ?? = ? WHERE ??=?`;
-        connection.query(query, [tableInput, col1, val1, col2, val2], function 
-            (err, result) {
+    updateOne: function (table, setColumn, devoured, whereColumn, id, cb) {
+        var queryString = "Update " + table + " Set " + setColumn + " = " + devoured + " where " + whereColumn + " = " + id + ";";
+        connection.query(queryString, function (err, result) {
                 if (err) throw err;
                 callback(result);
             });
-    }
+    },
+    delete: function (table, whereColumn, id, cb) {
+        var queryString = "Delete From " + table + " where " + whereColumn + " = " + id + ";";
+        connection.query(queryString, function (err, result) {
+           if (err) {
+              throw err;
+           }
+           cb(result);
+        });
+     }
 };
 
 
