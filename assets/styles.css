@@ -1,0 +1,120 @@
+body {
+    background-image: linear-gradient(
+      to bottom,
+      #3b768a,
+      #3b768a 45%,
+      #ece7e0 45%,
+      #ece7e0 90%,
+      #d69200 90%
+    );
+  }
+  .page-height {
+    min-height: 100vh;
+  }
+  .spacer {
+    min-height: 55px;
+  }
+  .animatedImg {
+    width: 200px;
+  }
+  .animatedImgs {
+    padding: 20px 0;
+    min-height: 275px;
+    position: relative;
+  }
+  .z10,
+  .z11,
+  .z12,
+  .z13,
+  .z14,
+  .z15 {
+    position: absolute;
+    left: calc(50% - 100px);
+  }
+  .z10 {
+    z-index: 10;
+  }
+  .animatedImgs:hover .z10 {
+    top: 86px;
+  }
+  .z11 {
+    z-index: 11;
+  }
+  .animatedImgs:hover .z11 {
+    top: 60px;
+  }
+  .z12 {
+    z-index: 12;
+  }
+  .animatedImgs:hover .z12 {
+    top: 34px;
+  }
+  .z13 {
+    z-index: 13;
+  }
+  .animatedImgs:hover .z13 {
+    top: 6px;
+  }
+  .z14 {
+    z-index: 14;
+  }
+  .animatedImgs:hover .z14 {
+    top: -20px;
+  }
+  .z15 {
+    z-index: 15;
+  }
+  .animatedImgs:hover .z15 {
+    top: -36px;
+  }
+  .z16 {
+    z-index: 16;
+    position: absolute;
+    top: 80px;
+    width: 100%;
+  }
+  h1 {
+    font-family: "Permanent Marker", cursive;
+    font-size: calc(40px + 4.7vw);
+    color: #fff;
+    line-height: 0.9;
+  }
+  h3 {
+    font-family: "Baloo Bhaina", cursive;
+    margin: 10px 0 30px;
+  }
+  p {
+    font-family: "Comfortaa", sans-serif;
+  }
+  button,
+  input {
+    font-family: "Comfortaa", sans-serif;
+  }
+  .leftMarg {
+    margin: 0 0 0 15px;
+  }
+  .topBotMarg {
+    margin: 10px 0;
+  }
+  .col,
+  .col-md-6 {
+    padding: 20px 10px;
+  }
+  .innerDiv {
+    background-color: #fff;
+    border: 1px solid #bbb;
+    border-radius: 0.25rem;
+    padding: 15px calc(2px + 3.5vw);
+  }
+  .inlineP {
+    display: inline;
+  }
+  .greyed {
+    color: #999;
+  }
+  #newBurgerName {
+    min-width: 150px;
+  }
+  .deleteBtn {
+    opacity: 0.5;
+  }

@@ -16,9 +16,9 @@ router.post("/api/burgers" , function(req,res) {
 });
 
 router.put("/api/burgers/:id", function(req,res) {
-    const condition = req.params.id;
-    burgers.updateOne(condition, function(result) {
-        if (result,affectedRow === 0) {
+    const id = req.params.id;
+    burgers.updateOne(id, function(result) {
+        if (result.changedRow === 0) {
               return res.status(404). end();
             } else {
               res.status(200).end();;
